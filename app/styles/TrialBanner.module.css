@@ -1,0 +1,6 @@
+
+.banner {
+    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), #505050);
+
+
+}

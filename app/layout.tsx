@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { HackProvider } from "./components/HackProvider";
 
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,23 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-          <body
-              className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
+      <body className={`${poppins.className} antialiased`}>
         <HackProvider>
           <div>
-
-          {children}
-
+            {children}
           </div>
-
         </HackProvider>
-
-          </body>
-
+      </body>
     </html>
-
-
   );
 }

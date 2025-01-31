@@ -1,0 +1,80 @@
+.header {
+    height: rem(60px);
+    background-color: var(--mantine-color-body);
+    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), #505050);
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+  }
+
+  .link {
+    display: block;
+    line-height: 1;
+    padding: rem(8px) rem(12px);
+    border-radius: var(--mantine-radius-md);
+    text-decoration: none;
+    font-size: var(--mantine-font-size-md);
+    font-weight: 500;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-5));
+
+    &[data-active="true"] {
+      background-color: var(--mantine-color-orange-4);
+      color: var(--mantine-color-white);
+      font-weight: 600;
+    }
+
+    &:hover:not([data-active="true"]) {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+      color: light-dark(var(--mantine-color-dark-4), var(--mantine-color-light-5));
+      transition: all 200ms ease;
+    }
+  }
+
+  .dropdownLink {
+    display: block;
+    line-height: 1;
+    padding-left: var(--mantine-spacing-xs);
+    padding-right: var(--mantine-spacing-xs);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
+    
+    border-radius: var(--mantine-radius-md);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-color: transparent; 
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
+
+    @mixin hover {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms; 
+      transition-duration: 200ms; 
+      
+      /* color: light-dark(var(--mantine-color-dark-4), var(--mantine-color-light-5)); */
+      /* background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6)); */
+      text-decoration: none;
+
+    }
+
+    &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+      color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    }
+  }
+
+  .subLink {
+    width: 100%;
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+    border-radius: var(--mantine-radius-md);
+  
+    @mixin hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
+    }
+  
+    color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-0));
+  }
+
+  .featureDropdown {
+    background-color: light-dark("#FFFFFF", var(--mantine-color-dark-6));
+  }

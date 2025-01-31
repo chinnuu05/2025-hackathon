@@ -1,0 +1,17 @@
+.verticalLine {
+    position: absolute;
+    left: 24px; /* left-6 */
+    top: 128px; /* top-32 */
+    width: 4px; /* w-1 */
+    height: 240px; /* h-60 */
+    background-color: #6b7280; /* bg-gray-500 */
+}
+
+.horizontalLine {
+    position: absolute;
+    left: 24px; /* left-6 */
+    top: 368px; /* top-92 */
+    width: 80px; /* w-20 */
+    height: 4px; /* h-1 */
+    background-color: #6b7280; /* bg-gray-500 */
+}

@@ -1,0 +1,10 @@
+.featured__image__container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .featured__image__container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
