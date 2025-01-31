@@ -78,11 +78,11 @@ function Footer() {
           <div className="left-footer-part flex w-full flex-col items-start justify-start pt-3 md:w-1/2 lg:w-1/3">
             <a href="#">
               <div className="header-logo flex items-center space-x-2">
-                <img className="h-10 w-10" src={`assets/notofox.svg`} alt="" />
+                <img className="h-10 w-10" src={`assets/broom-logo.png`} alt="" />
               </div>
             </a>
             <p className="mt-5 max-w-xs text-sm font-[400] text-white/60">
-              The fastest way to collect user feedback
+              Clean up your email inbox in seconds
             </p>
           </div>
 
@@ -105,28 +105,6 @@ function Footer() {
             </div>
           </div>
 
-          <div className="right-footer-part w-full pt-3 md:w-2/3 lg:w-1/3">
-            <div className=" footer-social-container-dark  flex items-center justify-between p-5">
-              <div className="flex flex-col gap-y-2">
-                <img
-                  className="h-8 w-8 lg:h-10 lg:w-10"
-                  src={`assets/notofox.svg`}
-                  alt=""
-                />
-                <p className="text-sm font-[400] text-white lg:text-base xl:text-lg">
-                  Follow us on twitter
-                </p>
-                <p className="-mt-2 text-xs font-[400] text-white/50">
-                  @notofox
-                </p>
-              </div>
-              <div>
-                <button className="footer-social-container-dark-button w-full rounded-full border border-transparent bg-orange-400 px-5 py-2 text-sm font-bold text-black transition duration-200 hover:shadow-lg hover:shadow-black hover:drop-shadow-lg">
-                  Follow
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

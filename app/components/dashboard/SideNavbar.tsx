@@ -160,12 +160,12 @@ export function SideNavbar({
                   <Avatar
                     radius="xl"
                     size={34}
-                    src={`images/notofox.svg`}
+                    src={`images/broom-logo.png`}
                   />
                 }
               >
                 <div className="items-center space-y-0.5 leading-3 text-left flex-1">
-                  <div className="text-[15px] font-medium text-black">Notofox</div>
+                  <div className="text-[15px] font-medium text-black">eBroom</div>
                   <div>
                     <a target="_blank" href="http://test.localhost:8000" className="hover:underline hover:text-blue-400 text-gray-500 font-normal text-sm">
                       <div className="items-center flex space-x-1">
@@ -271,7 +271,7 @@ export function SideNavbar({
           >
             <div className="flex items-center">
               <IconInbox className={classes.linkIcon} stroke={1.5} />
-              <span>Feedback Portal</span>
+              <span>Swipe</span>
             </div>
             <IconChevronDown 
               style={{ width: rem(18), height: rem(18) }}
@@ -321,7 +321,7 @@ export function SideNavbar({
           data-active={"/app/widgets".includes(active.toLowerCase()) || undefined}
         >
           <IconAppWindow className={classes.linkIcon} stroke={1.5} />
-          <span>Widgets</span>
+          <span>Inbox</span>
         </a>
 
 {/* 

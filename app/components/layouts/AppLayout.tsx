@@ -18,9 +18,13 @@ import { SideNavbar } from '@/app/components/dashboard/SideNavbar';
 import { Layout } from '@/app/components/layouts/Layout';
 import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useRouter } from 'next/navigation';
+
 // import { FeedbackWidget } from '@app/components/dashboard/feedback/FeedbackWidget';
 
 export const AppLayout = ( { children } : { children: React.ReactNode }) => {
+
+    const router = useRouter();
 
 
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
@@ -40,7 +44,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
     
             <div>
                 <SideNavbar 
-                    active={""}
+                    active={"Overview"}
                     onFeedbackClick={() => setFeedbackOpened((o) => !o)} 
                     feedbackOpened={feedbackOpened}
                 />
