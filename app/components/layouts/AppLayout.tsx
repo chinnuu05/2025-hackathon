@@ -1,7 +1,5 @@
-'use client';
-
-import React, { useContext } from 'react';
-import { useState, useEffect } from 'react';
+'use client'
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import { Group, Code, Popover } from '@mantine/core';
 import {
   IconBellRinging,
@@ -35,7 +33,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
 
     return ( 
 
-        <NextAuthProvider>
+        // <NextAuthProvider>
             <AppShell
             navbar={{
             width: 300,
@@ -71,7 +69,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
 
                 
             </AppShell>
-        </NextAuthProvider>
+        // </NextAuthProvider>
 
 
     )

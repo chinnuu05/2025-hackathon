@@ -7,6 +7,8 @@ import {
   IconFingerprint,
   IconKey,
   IconSettings,
+  IconSwipe,
+
   Icon2fa,
   IconDatabaseImport,
   IconReceipt2,
@@ -79,33 +81,36 @@ export function SideNavbar({
   const isClient = typeof window !== 'undefined';
   
   const links = data.map((item) => {
-    const commonProps = {
-      className: classes.link,
-      'data-active': item.path.includes(active.toLowerCase()) || undefined,
-      key: item.label,
+    const { key, ...otherProps } = {
+        className: classes.link,
+        'data-active': item.path.includes(active.toLowerCase()) || undefined,
+        key: item.label,
     };
 
     // Use regular anchor tags for server-side rendering
     if (!isClient) {
-      return (
-        <a
-          {...commonProps}
-          href={item.link}
-        >
-          <item.icon className={classes.linkIcon} stroke={1.5} />
-          <span>{item.label}</span>
-        </a>
-      );
+        return (
+            <a
+                key={key}
+                {...otherProps}
+                href={item.link}
+            >
+                <item.icon className={classes.linkIcon} stroke={1.5} />
+                <span>{item.label}</span>
+            </a>
+        );
     }
 
     // Use React Router Links for client-side
     return (
-      <a href='#'
-        {...commonProps}
-      >
-        <item.icon className={classes.linkIcon} stroke={1.5} />
-        <span>{item.label}</span>
-      </a>
+        <a
+            key={key}
+            {...otherProps}
+            href='#'
+        >
+            <item.icon className={classes.linkIcon} stroke={1.5} />
+            <span>{item.label}</span>
+        </a>
     );
   });
 
@@ -263,23 +268,23 @@ export function SideNavbar({
 
 
         <a 
-          href='/app/widgets'          
+          href='/swipe'          
           className={classes.link}
           data-active={"/app/widgets".includes(active.toLowerCase()) || undefined}
         >
-          <IconAppWindow className={classes.linkIcon} stroke={1.5} />
-          <span>Swipe Emails</span>
+          <IconSwipe className={classes.linkIcon} stroke={1.5} />
+          <span>Swipe</span>
         </a>
 
 
-        <a 
+        {/* <a 
           href='/app/widgets'          
           className={classes.link}
           data-active={"/app/widgets".includes(active.toLowerCase()) || undefined}
         >
           <IconAppWindow className={classes.linkIcon} stroke={1.5} />
           <span>Inbox</span>
-        </a>
+        </a> */}
 
 {/* 
         <a
@@ -297,15 +302,15 @@ export function SideNavbar({
               </div>
             </a> */}
 
-        <a href='/app/customize'  
+        {/* <a href='/app/customize'  
           className={classes.link}
           data-active={"/app/customize".includes(active.toLowerCase()) || undefined}
         >
           <IconPalette className={classes.linkIcon} stroke={1.5} />
           <span>Design</span>  
-        </a>
+        </a> */}
 
-        <a href='/app/settings'
+        <a href='/settings'
           className={classes.link}
           data-active={"/app/settings".includes(active.toLowerCase()) || undefined}
           >
