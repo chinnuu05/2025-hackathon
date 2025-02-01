@@ -8,7 +8,7 @@ export default function Dashboard() {
         <AppLayout>
 
             <div>
-                <TitleBlock title="Overview" subtitle="See an overview of your subscriber list"></TitleBlock>
+                <TitleBlock title="Overview" subtitle="See an overview of your email activity and subcriptions"></TitleBlock>
             </div>
 
             <div className="space-y-12">
@@ -20,9 +20,11 @@ export default function Dashboard() {
 
                 <div>
 
-                    <div className="divide-y-2 divide-mantine-border/50">
+                    <div className="space-y-4 divide-y-2 divide-mantine-border/50">
                         <SubscriberRow></SubscriberRow>
                         <SubscriberRow></SubscriberRow>
+                        <SubscriberRow></SubscriberRow>
+
                     </div>
             </div>
 

@@ -16,7 +16,7 @@ import { SideNavbar } from '@/app/components/dashboard/SideNavbar';
 import { Layout } from '@/app/components/layouts/Layout';
 import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import NextAuthProvider from './NextAuthProvider';
 
 // import { FeedbackWidget } from '@app/components/dashboard/feedback/FeedbackWidget';
@@ -24,6 +24,9 @@ import NextAuthProvider from './NextAuthProvider';
 export const AppLayout = ( { children } : { children: React.ReactNode }) => {
 
     const router = useRouter();
+    const pathname = usePathname();
+
+    console.log("pathname: " + pathname);
 
 
     const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
@@ -45,7 +48,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
         
                 <div>
                     <SideNavbar 
-                        active={"Overview"}
+                        active={pathname.replace("/", " ").replace(" ", "")}
                         onFeedbackClick={() => setFeedbackOpened((o) => !o)} 
                         feedbackOpened={feedbackOpened}
                     />

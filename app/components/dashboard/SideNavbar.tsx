@@ -8,6 +8,7 @@ import {
   IconKey,
   IconSettings,
   IconSwipe,
+  IconRefresh,
 
   Icon2fa,
   IconDatabaseImport,
@@ -77,7 +78,7 @@ export function SideNavbar({
   }
   
   console.log("acsssssssstive: " + active);
-
+  console.log("/app/swipe".includes(active.toLowerCase())); 
   const isClient = typeof window !== 'undefined';
   
   const links = data.map((item) => {
@@ -164,24 +165,24 @@ export function SideNavbar({
                 leftSection={
                   <Avatar
                     radius="xl"
-                    size={34}
-                    src={`images/broom-logo.png`}
+                    size={32}
+                    src={`assets/gmail.svg`}
                   />
                 }
               >
-                <div className="items-center space-y-0.5 leading-3 text-left flex-1">
-                  <div className="text-[15px] font-medium text-black">eBroom</div>
+                <div className="items-center leading-3 text-left flex-1">
+                  <div className="pt-0.5 text-sm font-medium text-black">pechuri9@gmail.com</div>
                   <div>
-                    <a target="_blank" href="http://test.localhost:8000" className="hover:underline hover:text-blue-400 text-gray-500 font-normal text-sm">
+                    <div className="hover:underline hover:text-blue-400 text-gray-500 font-normal text-sm">
                       <div className="items-center flex space-x-1">
                         <div>
-                          test.localhost
+                          Last synced: 2/1/25
                         </div>
                         <div>
-                          <IconExternalLink style={{ width: rem(14), height: rem(14) }} />
+                          <IconRefresh style={{ width: rem(14), height: rem(14) }} />
                         </div>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Button>
@@ -258,19 +259,18 @@ export function SideNavbar({
 
 
         <div className={classes.navbarLinks}>
-        <a href='/app'
+        <a href='/dashboard'
           className={classes.link}
-          data-active={"/app/overview".includes(active.toLowerCase()) || undefined}
+          data-active={"/app/dashboard".includes(active.toLowerCase()) || undefined}
         >
           <IconChartBar className={classes.linkIcon} stroke={1.5} />
           <span>Overview</span>
         </a>
 
-
         <a 
           href='/swipe'          
           className={classes.link}
-          data-active={"/app/widgets".includes(active.toLowerCase()) || undefined}
+          data-active={"/app/swipe".includes(active.toLowerCase()) || undefined}
         >
           <IconSwipe className={classes.linkIcon} stroke={1.5} />
           <span>Swipe</span>

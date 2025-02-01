@@ -95,7 +95,7 @@ const featureItems = [
 
 
 // if you want to customize the CTA button, you can change it here 👇
-const ctaButtonText = "Start your free trial";
+const ctaButtonText = "Sign up for free";
 
 
 
@@ -312,7 +312,7 @@ function Navbar( { isAuthenticated } ) {
                     href="/app/signup"
                     className="nav-button hover:drop-shadow-lg flex w-fit items-center justify-center rounded-2xl border border-orange-400 bg-[#FF8C46] px-7 py-2.5 text-base font-bold text-white ring-orange-400 ring-offset-2 ring-offset-slate-700 drop-shadow-[2px_2px_2px_rgb(0,0,0,1)] active:ring-1"
                   >
-                    <span>Start your free trial</span>
+                    <span>Sign up for free</span>
                 </a>
                 )
               }
