@@ -262,58 +262,15 @@ export function SideNavbar({
         </a>
 
 
+        <a 
+          href='/app/widgets'          
+          className={classes.link}
+          data-active={"/app/widgets".includes(active.toLowerCase()) || undefined}
+        >
+          <IconAppWindow className={classes.linkIcon} stroke={1.5} />
+          <span>Swipe Emails</span>
+        </a>
 
-        <div>
-          <a href='#'
-            className={`${classes.link} justify-between`}
-            onClick={() => setSubMenuOpen(!subMenuOpen)}
-            style={{ cursor: 'pointer' }}
-          >
-            <div className="flex items-center">
-              <IconInbox className={classes.linkIcon} stroke={1.5} />
-              <span>Swipe</span>
-            </div>
-            <IconChevronDown 
-              style={{ width: rem(18), height: rem(18) }}
-              className={`transition-transform ${subMenuOpen ? 'rotate-180' : ''}`}
-            />
-          </a>
-
-          <div className={`
-            ml-3 pl-3 border-l border-gray-200 
-            overflow-hidden transition-all duration-200 ease-in-out
-            ${subMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}
-          `}>
-
-            
-
-            <a href='/app/boards'
-              className={classes.link}
-              data-active={active.toLowerCase().includes('boards') || undefined}
-            >
-              <IconMessage className={classes.linkIcon} stroke={1.5} />
-              <span>Boards</span>
-            </a>
-
-            <a href='/app/changelog'
-              className={classes.link}
-              data-active={active.toLowerCase().includes('changelog') || undefined}
-            >
-              <IconConfetti className={classes.linkIcon} stroke={1.5} />
-              <span>Changelogs</span>
-            </a>
-            
-            <a href='/app/roadmap'
-              className={classes.link}
-              data-active={active.toLowerCase().includes('roadmap') || undefined}
-            >
-              <IconMap className={classes.linkIcon} stroke={1.5} />
-              <span>Roadmaps</span>
-            </a>
-            
-
-          </div>
-        </div>
 
         <a 
           href='/app/widgets'          

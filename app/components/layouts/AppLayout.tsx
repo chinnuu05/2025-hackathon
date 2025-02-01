@@ -19,6 +19,7 @@ import { Layout } from '@/app/components/layouts/Layout';
 import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/navigation';
+import NextAuthProvider from './NextAuthProvider';
 
 // import { FeedbackWidget } from '@app/components/dashboard/feedback/FeedbackWidget';
 
@@ -33,41 +34,45 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
     const [feedbackOpened, setFeedbackOpened] = useState(false);
 
     return ( 
-        <AppShell
-        navbar={{
-          width: 300,
-          breakpoint: 'md',
-          collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
-        }}
-        >
-            <AppShell.Navbar>
-    
-            <div>
-                <SideNavbar 
-                    active={"Overview"}
-                    onFeedbackClick={() => setFeedbackOpened((o) => !o)} 
-                    feedbackOpened={feedbackOpened}
-                />
-    
-            </div>
-            </AppShell.Navbar>
-    
-            <AppShell.Main>
-                <div className="py-16 px-12">
-                    {children}
+
+        <NextAuthProvider>
+            <AppShell
+            navbar={{
+            width: 300,
+            breakpoint: 'md',
+            collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+            }}
+            >
+                <AppShell.Navbar>
+        
+                <div>
+                    <SideNavbar 
+                        active={"Overview"}
+                        onFeedbackClick={() => setFeedbackOpened((o) => !o)} 
+                        feedbackOpened={feedbackOpened}
+                    />
+        
                 </div>
-            </AppShell.Main>
+                </AppShell.Navbar>
+        
+                <AppShell.Main>
+                    <div className="py-16 px-12">
+                        {children}
+                    </div>
+                </AppShell.Main>
 
-            {/* {feedbackOpened && (
-                <FeedbackWidget/>
-            )}
+                {/* {feedbackOpened && (
+                    <FeedbackWidget/>
+                )}
 
-            {
-                feedbackOpened ? "test" : "no"
-            } */}
+                {
+                    feedbackOpened ? "test" : "no"
+                } */}
 
-            
-        </AppShell>
+                
+            </AppShell>
+        </NextAuthProvider>
+
 
     )
 }

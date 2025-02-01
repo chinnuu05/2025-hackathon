@@ -15,7 +15,6 @@ import {
   import React, { useRef } from 'react';
   import Autoplay from 'embla-carousel-autoplay';
   
-  import { Context } from "@reactivated";
 //   import Footer from "@client/components/1111111marketing/Footer/Footer";
   
   export default function AuthLayout({
@@ -25,7 +24,6 @@ import {
   }) {
   
       
-      const context = React.useContext(Context);
       const autoplay = useRef(Autoplay({ delay: 2000 }));
   
       const testimonials = [
@@ -44,7 +42,7 @@ import {
               thumbnail: "assets/images/srk.png",
           },
           {
-              text: "An absolute game changer for marketing and growing SEO",
+              text: "Placeholder testimonial goes here",
               rating: 5,
               name: "Sai Krishan",
               company: "supablog.ai",
@@ -130,7 +128,7 @@ import {
                           <div className="flex justify-between items-center">
                             <div className="items-center flex space-x-4">
                               <Avatar
-                                src={`${context.STATIC_URL}${testimonial.thumbnail}`}
+                                src={`${testimonial.thumbnail}`}
                                 size="lg"
                                 radius="xl"
                               />
