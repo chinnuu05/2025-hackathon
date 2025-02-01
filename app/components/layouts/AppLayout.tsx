@@ -36,7 +36,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
 
     return ( 
 
-        // <NextAuthProvider>
+        <NextAuthProvider>
             <AppShell
             navbar={{
             width: 300,
@@ -57,7 +57,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
                 </AppShell.Navbar>
         
                 <AppShell.Main>
-                    <div className="py-16 px-12">
+                    <div className="h-screen bg-gray-50 py-16 px-12">
                         {children}
                     </div>
                 </AppShell.Main>
@@ -72,7 +72,7 @@ export const AppLayout = ( { children } : { children: React.ReactNode }) => {
 
                 
             </AppShell>
-        // </NextAuthProvider>
+        </NextAuthProvider>
 
 
     )

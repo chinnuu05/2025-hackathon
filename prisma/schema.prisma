@@ -13,19 +13,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id Int @id @default (autoincrement())
+  email String @unique
+  name String
+  password String
+  createdAt DateTime @default (now())
+}
+
 model Email {
   id Int @id @default (autoincrement())
   subject String
-  body String
-  sentAt DateTime 
-  fromEmail String
-  toEmail String
+  date DateTime
+  sender String
+  toAddress String
 }
 
 model CompanySender {
+  id Int @id @default (autoincrement())
   name String
   email String
   total_number_of_emails_sent Int
   monthly_emails_sent Int
 
 }
+

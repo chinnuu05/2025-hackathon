@@ -35,12 +35,15 @@ export default function SignUpForm() {
     const handleSignUp = (values: any) => {
 
         console.log("Creating new account with values: " + JSON.stringify(values))
-
-        fetch("http://localhost:8000/api/account/signup", {
+        
+        // Send POST rqeuest to create new user in prisma db
+        fetch("/api/register", {
             method: "POST",
             body: JSON.stringify({
                 email: values.email, 
-                password: values.password
+                password: values.password,
+                name: "Praneeth",
+                callbackUrl: "/dashboard"
             })
         })
         .then((response) => response.json())
@@ -51,17 +54,16 @@ export default function SignUpForm() {
                 if (data.status == "success") {
                     console.log(`Created user, logging in with ${values.email} and ${values.password}`)
 
-
                     setTimeout(() => {
                         setLoading(false);
                     }, 1000)
 
-                    // Call NextAuth signIn() with /onboarding as redirect URI
+                   // sign in the user and redirect to dashboard
                     signIn("credentials", {
                         username: values.email,
                         password: values.password,
                         redirect: true,
-                        callbackUrl: "http://localhost:3000/dashboard/verify-email"
+                        callbackUrl: "/dashboard"
                     })
 
                 }
