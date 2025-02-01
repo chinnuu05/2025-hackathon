@@ -1,9 +1,28 @@
 version: '3.8'
 services:
-  web:
-    build: .
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: emaildb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs_app
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=production
-    restart: always
+    env_file:
+      - .env  # Place DATABASE_URL and other environment variables here
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

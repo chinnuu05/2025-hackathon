@@ -59,11 +59,16 @@ export default function SignUpForm() {
                     }, 1000)
 
                    // sign in the user and redirect to dashboard
-                    signIn("credentials", {
-                        username: values.email,
-                        password: values.password,
-                        redirect: true,
-                        callbackUrl: "/dashboard"
+                    // signIn("credentials", {
+                    //     username: values.email,
+                    //     password: values.password,
+                    //     redirect: true,
+                    //     callbackUrl: "http://localhost:3001/dashboard"
+                    // })
+
+                    notifications.show({
+                        title: "Account created succesfully",
+                        message: "Please sign in to your account"
                     })
 
                 }

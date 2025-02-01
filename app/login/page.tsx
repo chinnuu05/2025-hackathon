@@ -60,6 +60,8 @@ export default function LoginPage() {
   }, [error]);
 
   const handleLogin = (values: any) => {
+
+    console.log(`Signing in with ${form.values.email} and ${form.values.password}`)
     signIn("credentials", {
       username: form.values.email,
       password: form.values.password,

@@ -38,7 +38,7 @@ export const HackProvider = ({ children }: { children: React.ReactNode }) => {
             <MantineProvider theme={theme}>
                 
                 {/* to send mantine notifications */}
-                <Notifications />
+                <Notifications position="top-right" zIndex={100} />
 
 
                 <RouterTransition />
